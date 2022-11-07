@@ -1,0 +1,80 @@
+.home{
+
+}
+
+.banner{
+    display: flex;
+    color: var(--white);
+    background-color: var(--primary_color);
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+.banner_left{
+    align-items: flex-start !important;
+    padding: 4rem;
+    width:45%;
+    
+}
+
+.banner_right{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width:55%;
+    padding: 3rem 0rem 3rem 3rem;
+    position: relative;
+}
+
+.graph1{
+    display: flex;
+    width: 75%;
+}
+
+.graph2{
+    display: flex;
+    align-items: center;
+    width: 25%;
+}
+.graph2>img{
+    position: absolute;
+    width: 25rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 29px 0px;
+
+}
+
+/* waqars css */
+
+.banner2{
+    padding: 8rem;
+    background-color: rgb(249, 251, 251);
+}
+
+@media only screen and (max-width:1050px) {
+
+    .banner{
+        flex-wrap: wrap;
+    }
+    .banner_left{
+        width:100%;
+    }
+    
+    .banner_right{
+        justify-self: flex-end;
+    }
+    .banner2{
+    padding: 4rem;
+}
+.graph2>img{
+
+    width: 5rem;
+
+
+}
+}
+@media only screen and (max-width:700px) {
+
+    .banner2{
+    padding: 2rem;
+}
+}
