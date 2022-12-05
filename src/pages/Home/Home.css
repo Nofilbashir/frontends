@@ -4,6 +4,7 @@
 
 .banner{
     display: flex;
+    /* height: 80vh; */
     color: var(--white);
     background-color: var(--primary_color);
     flex-wrap: nowrap;

@@ -19,11 +19,11 @@ const About = () => {
             </div>
             <div className="aboutCard">
                 <img src={require("../../../assets/Icon-1.png")} alt="icon"/>
-                <h3>Working time 24/7</h3>
+                <h3>Real Time Analysis</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, error vel iure impedit voluptate quaerat.</p>
             </div>            <div className="aboutCard">
                 <img src={require("../../../assets/Icon-2.png")} alt="icon"/>
-                <h3>Working time 24/7</h3>
+                <h3>Fast and Reliable</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, error vel iure impedit voluptate quaerat.</p>
             </div>
         </div>

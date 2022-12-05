@@ -8,6 +8,7 @@
     grid-template-columns: 1fr 1fr;
     padding:0rem 5rem;
     /* background-color: rgb(215, 185, 185); */
+    padding-bottom: 5rem;
 }
 .dashboardbox{
 

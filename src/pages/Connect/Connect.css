@@ -1,0 +1,17 @@
+.ConnectContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+}
+.FormChild{
+    padding-top: 2rem;
+    width: 50%;
+}
+.FormChild>label{
+    font-size: 1.3rem;
+}
+.FormChild>button{
+    
+}

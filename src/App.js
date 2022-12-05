@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home/Home';
+import Connect from './pages/Connect/Connect';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path="/connect" element={<Connect/>}/>
       </Routes>
     </div>
     </Router>

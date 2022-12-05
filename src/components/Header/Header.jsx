@@ -1,6 +1,7 @@
 import React from 'react'
 import './Header.css'
 import {Link, useNavigate} from 'react-router-dom'
+import {BiHome} from 'react-icons/bi'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../../features/Auth/AuthSlice'
 
@@ -19,6 +20,7 @@ const Header = () => {
     <header className='header'>
         <div className="logo">
             <Link to='/'>Fori Analytics</Link>
+            <BiHome/>
         </div>
         <ul>
        {user?

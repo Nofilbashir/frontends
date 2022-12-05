@@ -1,43 +1,43 @@
 import React from "react";
 import { Chart } from "react-google-charts";
+import { useSelector } from 'react-redux'
 
-export const data = [
-  ["Date", "Value"],
-  [new Date("2010-11-06T22:54:17.929Z"), 2000 * Math.random()],
-  [new Date(1997, 1, 1), 2000 * Math.random()],
-  [new Date(1998, 1, 1), 2000 * Math.random()],
-  [new Date(1999, 1, 1), 2000 * Math.random()],
-  [new Date(2000, 1, 1), 2000 * Math.random()],
-  [new Date(2001, 1, 1), 2000 * Math.random()],
-  [new Date(2002, 1, 1), 2000 * Math.random()],
-  [new Date(2003, 1, 1), 2000 * Math.random()],
-  [new Date(2004, 1, 1), 2000 * Math.random()],
-  [new Date(2005, 1, 1), 2000 * Math.random()],
-  [new Date(2006, 1, 1), 2000 * Math.random()],
-  [new Date(2007, 1, 1), 2000 * Math.random()],
-  [new Date(2008, 1, 1), 2000 * Math.random()],
-  [new Date(2009, 1, 1), 2000 * Math.random()],
-];
 
-export const options = {
-  chartArea: { height: "80%", width: "90%" },
-  hAxis: { slantedText: false },
-  vAxis: { viewWindow: { min: 0, max: 2000 } },
-  legend: { position: "none" },
-};
 
-export default function App() {
+
+export default function App(props) {
+  const {data, title} = props
+  const {goals,isSucess} = useSelector((store)=>store.goals)
+  // console.log("combo",props.data.RevenueGraph)
+
+  const options = {
+    chartArea: { height: "80%", width: "75%" },
+    title: title,
+    vAxis: { title: "Revenue" },
+  
+    hAxis: { slantedText: false },
+    // vAxis: { viewWindow: { min: 0, max: 200 } },
+    legend: { position: "none" },
+  };
+
   return (
+    <>
     <Chart
-      chartType="Bar"
+      chartType="LineChart"
       width="100%"
       height="400px"
-      data={data}
+      data={data.map((item,i)=>{
+        if(i===0){
+        return ["Date","Total Revenue","Average Revenue"]
+        }else{
+        return [new Date(item[0]),item[1],item[2]]
+        }   
+      })}         
+    // data={[['Date',"B"],[new Date("2020-11-01"),2]]}
       options={options}
       chartPackages={["corechart", "controls"]}
       controls={[
         {
-
           controlType: "DateRangeFilter",
           options: {
             filterColumnLabel: "Date",
@@ -47,5 +47,27 @@ export default function App() {
         },
       ]}
     />
+    </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

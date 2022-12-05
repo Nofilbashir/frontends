@@ -1,39 +1,42 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-export const data = [
-  ["Date", "Value", "Price"],
-  [new Date(1997, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(1998, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(1999, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2000, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2001, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2002, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2003, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2004, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2005, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2006, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2007, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2008, 1, 1), 2000 * Math.random(),2000 * Math.random()],
-  [new Date(2009, 1, 1), 2000 * Math.random(),2000 * Math.random()],
+
+
+
+
+
+export default function App(props) {
+
+  const {data, title} = props
+
+
+  const options = {
+    chartArea: { height: "80%", width: "75%" },
   
-];
+    title: title,
+    hAxis: { slantedText: false },
+    // hAxis: { title: "No of Rides" },
+    vAxis: { title: "No of Transactions/ Rides" },
+  
+    curveType: "function",
+    legend: { position: "bottom" },
+  };
 
-
-export const options = {
-  title: "Company Performance",
-  curveType: "function",
-  legend: { position: "bottom" },
-};
-
-export default function App() {
   return (
     <Chart
       chartType="LineChart"
       width="100%"
       height="400px"
-      data={data}
+      data={data.map((item,i)=>{
+        if(i===0){
+        return item
+        }else{
+        return [new Date(item[0]),item[1]]
+        }
+      })}
       options={options}
+      
       chartPackages={["corechart", "controls"]}
       controls={[
         {
@@ -45,7 +48,8 @@ export default function App() {
           },
           controlPosition: "top",
         },
-      ]}
+      ]
+    }
     />
   );
 }
